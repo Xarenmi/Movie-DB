@@ -3,6 +3,7 @@ import SetHeader from '../header/header.jsx';
 import Footer from '../footer/footer.jsx';
 import MovieBar from '../components/movieBar/movieBar.jsx';
 /* import CoverCarousel from '../components/carousel/carousel.jsx'; */
+import SetCardsByGenre from '../components/movieGetters/setByGenre.jsx';
 import { getLatestCovers } from '../../db/db.js';
 
 
@@ -30,7 +31,7 @@ export default function Home() {
                 <MovieBar />
             </section>
             <section id="cards">
-            {/* <DisplayCards /> */}
+                <SetCardsByGenre />
             </section>
             <footer id="footer" className='footer'>
                 <Footer />

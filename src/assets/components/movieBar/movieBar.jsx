@@ -24,7 +24,7 @@ function MovieBar() {
 
     return (
         <Container fluid className="display-cards-container">
-                <h1 className="now-playing-header">NOW PLAYING</h1>
+            <h1 className="now-playing-header">NOW PLAYING</h1>
             <Row className="no-gutters justify-content-start flex-nowrap">
                 {latestMovies.map(movie => (
                     <MovieCard key={movie.id} className="custom-card" movie={movie} />

@@ -7,9 +7,8 @@ body {
   background-color: black;
 }
 
-header {
-  background-color: black;
-  color: white;
+#cards {
+  margin-top: 80px;
 }
 
 .footer {

@@ -20,6 +20,7 @@ function SetCardsByGenre() {
 
   return (
     <div>
+      <h1 className="" style={{color:'#01b4e4', fontFamily:'Impact', fontSize:'32px', marginLeft:'30px'}}>SELECTED MOVIES</h1>
       <DisplayCards latestMovies={genreMovies} />
     </div>
   );

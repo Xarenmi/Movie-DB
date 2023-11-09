@@ -29,11 +29,12 @@ body {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: #90cea1 !important;
   text-align: left;
-  font-size: 26px;
-  position: fixed;
-  top: 600px;
-  left: 20px;
+  font-size: 32px;
+  position: sticky;
+  top: 20px;
+  left: 30px;
   z-index: 20;
+  text-shadow: #000 2px 2px;
 }
 .custom-card {
   flex: 0 0 auto; /* So the card doesn't grow or shrink */
@@ -43,11 +44,4 @@ body {
   .display-cards-container {
     margin-top: 10px;
   }
-
-  .now-playing-header {
-    position: static;
-    top: auto;
-    left: auto;
-  }
-
 }
