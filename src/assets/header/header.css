@@ -1,0 +1,28 @@
+.custom-navbar {
+    height: 150px;
+}
+
+.mx-auto {
+    margin: 0;
+    width: 80% !important;
+}
+
+@media screen and (max-width: 1000px) {
+    .mx-auto {
+        width: 70% !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .custom-navbar {
+        display: block;
+        height: 200px;
+        padding: 15px 0;
+        background-color: rgb(33, 37, 41);
+    }
+
+    .mx-auto {
+        margin: 15px 0;
+    }
+}

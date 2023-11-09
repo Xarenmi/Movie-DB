@@ -1,14 +1,26 @@
-import Stack from 'react-bootstrap/Stack';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import React from 'react';
+import { FaGithub } from 'react-icons/fa';
 
-
-function Footer(prop) {
-  return (
-    <Stack direction="horizontal" gap={2}>
-      <div className="p-2">{prop.developer.penName}</div>
-      <div className="p-2"><a href={prop.developer.gitHub}><i className="bi bi-github"></i></a></div>
-    </Stack>
-  );
+const developer = {
+  penName: 'Xarenmi',
+  gitHub: 'https://github.com/Xarenmi/',
 }
+
+const Footer = () => {
+  const handleGithubClick = () => {
+    window.location.href = developer.gitHub;
+  };
+
+  return (
+    <div style={{ backgroundColor: 'rgb(33, 37, 41)', color: 'white', padding: '0px' }}>
+      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" style={{ marginRight: '10px', color: 'white' }} onClick={handleGithubClick}>
+          <FaGithub size={30}/> 
+        </a>
+        <p style={{ margin: '0 20px 0 0', paddingTop: '5px' }} onClick={handleGithubClick} >{developer.penName}</p>
+      </div>
+    </div>
+  );
+};
 
 export default Footer;

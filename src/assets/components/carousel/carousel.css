@@ -1,8 +1,20 @@
 .carousel-item {
-    background-position: center;
+    background-position: 50% 10%;
     background-size: cover;
   }
 
 img {
-  height: 500px;
+  height: 600px;
+}
+
+@media screen and (max-width: 900px) {
+  img {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  img {
+    height: 300px;
+  }
 }

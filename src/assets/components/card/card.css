@@ -1,0 +1,35 @@
+.movie-card {
+    width: 18rem!important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative;
+    border: none !important;
+}
+
+.image-overlay {
+    position: relative;
+}
+
+img {
+    transition: filter 0.3s ease !important;
+    border-radius: 0 !important;
+}
+
+.overlay-content {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    text-align: center !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    color: white;
+}
+
+.movie-card:hover img {
+    filter: brightness(0.5);
+}
+
+.movie-card:hover .overlay-content {
+    opacity: 1 !important;
+}

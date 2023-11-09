@@ -1,0 +1,53 @@
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(33, 37, 41);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+body {
+  scrollbar-color: #000 rgb(33, 37, 41);
+  scrollbar-width: thin;
+}
+
+
+.display-cards-container {
+  padding: 0;
+  margin: 0;
+  overflow-x: auto;  /* For horizontal scrolling*/
+  border: 2px black solid;
+  margin-bottom: 80px;
+}
+
+.now-playing-header {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #90cea1 !important;
+  text-align: left;
+  font-size: 26px;
+  position: fixed;
+  top: 600px;
+  left: 20px;
+  z-index: 20;
+}
+.custom-card {
+  flex: 0 0 auto; /* So the card doesn't grow or shrink */
+}
+
+@media screen and (max-width: 700px) {
+  .display-cards-container {
+    margin-top: 10px;
+  }
+
+  .now-playing-header {
+    position: static;
+    top: auto;
+    left: auto;
+  }
+
+}
