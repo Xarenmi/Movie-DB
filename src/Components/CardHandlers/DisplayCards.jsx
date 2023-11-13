@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import MovieCard from '../card/card.jsx';
-import './displayCards.css';
+import MovieCard from '../Card/Card.jsx';
+import './DisplayCards.css';
 
 function DisplayCards({ latestMovies }) {
   return (

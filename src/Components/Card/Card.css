@@ -4,6 +4,7 @@
     margin: 0 !important;
     position: relative;
     border: none !important;
+    background-color: transparent;
 }
 
 .image-overlay {
@@ -12,7 +13,9 @@
 
 img {
     transition: filter 0.3s ease !important;
-    border-radius: 0 !important;
+    border-radius: 20px !important;
+    padding: 10px;
+    background-color: transparent;
 }
 
 .overlay-content {

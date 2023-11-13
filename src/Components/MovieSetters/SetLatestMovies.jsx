@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getLatest } from '../../../db/db.js';
-import DisplayCards from '../cardHandlers/displayCards.jsx';
+import DisplayCards from '../CardHandlers/DisplayCards.jsx';
 
 function SetCards() {
   const [latestMovies, setLatestMovies] = useState([]);
