@@ -3,11 +3,11 @@ import { Container, Row, Col } from 'react-bootstrap';
 import MovieCard from '../Card/Card.jsx';
 import './DisplayCards.css';
 
-function DisplayCards({ latestMovies }) {
+function DisplayCards({ movies }) {
   return (
     <Container fluid className="display-cards-container">
       <Row className="no-gutters justify-content-center">
-        {latestMovies.map(movie => (
+        {movies.map(movie => (
           <MovieCard key={movie.id} className="custom-card" movie={movie} />
         ))}
       </Row>

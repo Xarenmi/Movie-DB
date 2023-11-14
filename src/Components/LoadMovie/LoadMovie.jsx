@@ -1,4 +1,6 @@
-import { mockMovie } from "../MovieSetters/DisplayTest/mockMovie";
+import { getCover } from "../../Assets/Modules/getCover";
+import { mockMovie } from "../../Assets/mockMovie.js";
+getCover
 import './LoadMovie.css';
 
 export default function LoadMovie({ movie = mockMovie }) {
@@ -18,22 +20,24 @@ export default function LoadMovie({ movie = mockMovie }) {
         <div key={genre.id} className="genre">{genre.name}</div>
     ));
 
-    const setCast = movie.credits.cast.map((actor) => (
+    const castWithLineBreaks = movie.credits.cast.map((actor) => ({
+        ...actor,
+        character: actor.character.replace(/\//g, '<br>').replace(/:/g, '<br>').replace(/\(/g, '<br>('),
+    }));
+
+    const setCast = castWithLineBreaks.map((actor) => (
         <div key={actor.id} className="cast-member">
             <img src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2${actor.profile_path}`} alt={actor.name} />
             <div className="cast-details">
                 <p className="name">{actor.name}</p>
-                <p className="role">{actor.character}</p>
+                <p className="role" dangerouslySetInnerHTML={{ __html: actor.character }} />
             </div>
         </div>
     ));
 
-        const coverImagePath = `https://image.tmdb.org/t/p/w1280${movie.poster_path}`;
+        const coverImagePath = getCover(movie);
         
-        const castWithLineBreaks = movie.credits.cast.map((actor) => ({
-            ...actor,
-            character: actor.character.replace(/\//g, '<br>').replace(/:/g, '<br>').replace(/\(/g, '<br>('),
-        }));
+        
 
     return (
         <div id="movie-container">
