@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import MovieCard from '../Card/Card.jsx';
+import MovieCard from '../Card/MovieCard.jsx';
 import './DisplayCards.css';
 
 function DisplayCards({ movies }) {

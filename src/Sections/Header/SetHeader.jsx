@@ -2,7 +2,7 @@ import { Navbar, Container, FormControl, InputGroup } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import MovieBar from '../../Components/MovieBar/MovieBar.jsx';
 import { getLatest } from '../../Assets/db.js';
-import './Header.css';
+import './SetHeader.css';
 import tmdbLogo from './tmdb_logo.svg';
 
 const SetHeader = ({ onSearch }) => {
@@ -39,7 +39,7 @@ const SetHeader = ({ onSearch }) => {
                         />
                     </Navbar.Brand>
                     <InputGroup className="mx-auto">
-                        <FormControl placeholder="Search for movie, genre or release year..." onChange={(e) => handleSearch(e.target.value)}/>
+                        <FormControl placeholder="Search a genre to suggest movies..." onChange={(e) => handleSearch(e.target.value)}/>
                     </InputGroup>
                 </Container>
             </Navbar>
