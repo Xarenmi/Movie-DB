@@ -5,7 +5,11 @@ import { getLatest } from '../../Assets/db.js';
 import './Header.css';
 import tmdbLogo from './tmdb_logo.svg';
 
-const SetHeader = () => {
+const SetHeader = ({ onSearch }) => {
+    const handleSearch = (searchQuery) => {
+        onSearch(searchQuery);
+    };
+    
     const [latestMovies, setLatestMovies] = useState([]);
 
     useEffect(() => {
@@ -35,7 +39,7 @@ const SetHeader = () => {
                         />
                     </Navbar.Brand>
                     <InputGroup className="mx-auto">
-                        <FormControl placeholder="Search for movie, genre or release year..." />
+                        <FormControl placeholder="Search for movie, genre or release year..." onChange={(e) => handleSearch(e.target.value)}/>
                     </InputGroup>
                 </Container>
             </Navbar>

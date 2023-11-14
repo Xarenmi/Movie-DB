@@ -29,11 +29,17 @@ const getLatestCovers = async () => {
     return coversArr;
 }
 
-const getMovies = async (/*GENRE*/) => {
-    /*for test*/
-    /**/const genres = await getGenres();
-    /**/const genreObject = genres[Math.floor(Math.random() * genres.length)];
-    /**/const selectedGenre = genreObject.id;
+const getMovies = async (genre) => {
+    const genres = await getGenres();
+    const lowercaseGenre = genre.toLowerCase();
+    const genreObject = genres.find((g) => g.name.toLowerCase() === lowercaseGenre);
+
+    if (!genreObject) {
+        console.error('Genre not found');
+        return [];
+    }
+
+    const selectedGenre = genreObject.id;
     
     const discoverMovieEndpoint = '/discover/movie';
     const requestParams = `?api_key=${tmdbKey}&with_genres=${selectedGenre}`;
@@ -66,7 +72,6 @@ const getMovieInfo = async () => {
         if (response.ok) {
             const jsonResponse = await response.json();
             const movieInfo = jsonResponse;
-            /**/console.log('Peli en DB', movieInfo);
             return movieInfo;
         }
     } catch (error) {

@@ -3,7 +3,7 @@ import { getMovies } from '../../Assets/db.js';
 import DisplayCards from '../CardHandlers/DisplayCards.jsx';
 import Filter from '../Filters/Filter.jsx';
 
-function SetCardsByGenre() {
+function SetCardsByGenre({ searchQuery }) {
   const [genreMovies, setGenreMovies] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState('');
   const [loading, setLoading] = useState(true);
@@ -11,7 +11,7 @@ function SetCardsByGenre() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const movies = await getMovies();
+        const movies = await getMovies(searchQuery);
         setGenreMovies(movies);
         setLoading(false);
       } catch (error) {
@@ -21,7 +21,7 @@ function SetCardsByGenre() {
     };
 
     fetchData();
-  }, []);
+  }, [searchQuery]);
 
   const handleFilterChange = (e) => {
     setSelectedFilter(e.target.value);
@@ -38,11 +38,11 @@ function SetCardsByGenre() {
   return (
     <div style={{marginTop: '150px', marginBottom: '150px'}}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <h1 style={{ color: '#01b4e4', fontFamily: 'Impact', fontSize: '72px', marginLeft: '30px' }}>SUGGESTED MOVIES</h1>
+        <h1 style={{ color: '#01b4e4', fontFamily: 'Impact', fontSize: '72px', marginLeft: '30px' }}>{`SUGGESTED ${searchQuery.toUpperCase()} MOVIES`}</h1>
         <Filter onFilterChange={handleFilterChange} selectedFilter={selectedFilter} />
       </div>
       {filteredMovies.length === 0 ? (
-        <p>None of the suggested movies fit the selected criteria</p>
+        <p>No movies fit the selected criteria</p>
       ) : (
         <DisplayCards movies={filteredMovies} />
       )}
